@@ -337,10 +337,10 @@ public class ObiBotKenobi extends AIWithComputationBudget {
             targetPos.add(unit.getPosition(pgs));
         }
         ArrayList<Pair<Integer,Integer>> distances=djikstra(startPos,targetPos,gs);
-        distances.sort(Comparator.comparingInt(a -> a.m_b));
         if(distances==null || distances.size()==0){
             return pgs.getWidth()*pgs.getHeight()+1;
         }
+        distances.sort(Comparator.comparingInt(a -> a.m_b));
         return distances.get(0).m_b;
     }
 
